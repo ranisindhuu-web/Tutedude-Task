@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Records Management System</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f1f5f9;
+            color: #1e293b;
+            padding: 40px 20px;
+        }
+        .app-wrapper {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        header h1 {
+            font-size: 2.2rem;
+            color: #0f172a;
+            margin-bottom: 8px;
+        }
+        header p {
+            color: #64748b;
+            font-size: 1rem;
+        }
+        .search-container {
+            width: 100%;
+            max-width: 500px;
+            margin: 0 auto 35px auto;
+        }
+        .search-box {
+            width: 100%;
+            padding: 14px 20px;
+            font-size: 1rem;
+            border: 2px solid #cbd5e1;
+            border-radius: 12px;
+            background-color: #ffffff;
+            outline: none;
+            transition: border-color 0.2s, box-shadow 0.2s;
+        }
+        .search-box:focus {
+            border-color: #3b82f6;
+            box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.15);
+        }
+        /* Dynamic Grid Layout container */
+        .records-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 25px;
+        }
+        /* Individual Student Card Styling */
+        .student-card {
+            background-color: #ffffff;
+            border-radius: 16px;
+            padding: 24px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+            border: 1px solid #e2e8f0;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .student-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+        .card-header {
+            border-bottom: 2px solid #f1f5f9;
+            padding-bottom: 12px;
+            margin-bottom: 16px;
+        }
+        .student-name {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #0f172a;
+        }
+        .info-row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+            font-size: 0.95rem;
+        }
+        .info-label {
+            color: #64748b;
+            font-weight: 500;
+        }
+        .info-value {
+            color: #334155;
+            font-weight: 600;
+        }
+        .badge-marks {
+            background-color: #dcfce7;
+            color: #15803d;
+            padding: 2px 8px;
+            border-radius: 6px;
+        }
+        .no-results {
+            grid-column: 1 / -1;
+            text-align: center;
+            padding: 40px;
+            color: #94a3b8;
+            font-size: 1.1rem;
+            background: #ffffff;
+            border-radius: 12px;
+            border: 2px dashed #e2e8f0;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="app-wrapper">
+        <header>
+            <h1>Student Records Registry</h1>
+            <p>Type in the query field below to dynamically filter records in real-time.</p>
+        </header>
+
+        <div class="search-container">
+            <input type="text" id="searchInput" class="search-box" placeholder="Search students by name...">
+        </div>
+
+        <div id="recordsGrid" class="records-grid"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
