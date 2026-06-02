@@ -1,0 +1,266 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+body, html {
+    width: 100%;
+    height: 100%;
+    background-color: #ffffff;
+   
+}
+
+.navbar {
+    width: 100%;
+    height: 90px;
+    padding: 0 8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #ffffff;
+    position: relative;
+    z-index: 100;
+}
+
+.logo {
+    font-size: 32px;
+    font-weight: 700;
+    color: #334155;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 32px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #64748b;
+    font-size: 16px;
+    font-weight: 500;
+    transition: color 0.2s ease;
+}
+
+.nav-links a:hover {
+    color: #00a8ff;
+}
+
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.user-badge {
+    background-color: #e0f2fe;
+    color: #0284c7;
+    padding: 14px 28px;
+    border-radius: 12px;
+    font-weight: 600;
+    font-size: 15px;
+}
+
+/* Mobile Hamburger Button Structure (Hidden on desktop layout by default) */
+.menu-trigger-btn {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 21px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    z-index: 110;
+    
+}
+
+.menu-trigger-btn .bar {
+    width: 100%;
+    height: 3px;
+    background-color: #334155;
+    border-radius: 2px;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+/* Drawer Component Hidden Globally on Desktop */
+.mobile-drawer {
+    display: none;
+}
+
+*/
+.hero-section {
+    width: 100%;
+    min-height: calc(100vh - 90px);
+    padding: 0 8%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.hero-left {
+    flex: 1.1;
+}
+
+.hero-heading {
+    font-size: 48px;
+    font-weight: 700;
+    color: #334155;
+    line-height: 1.25;
+    margin-bottom: 20px;
+}
+
+.highlight-text {
+    color: #00a8ff;
+}
+
+.hero-description {
+    font-size: 18px;
+    color: #94a3b8;
+    line-height: 1.6;
+    max-width: 520px;
+    margin-bottom: 35px;
+}
+
+/* Dynamic Interaction CTA Button With Growth & Tilt Scaling Adjustments */
+.cta-btn{
+    background-color:#1cc0ff;
+    color:white;
+    border:none;
+    padding:15px 35px;
+    border-radius:10px;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.cta-btn:hover{
+    transform:scale(1.05);
+}
+
+.cta-btn:active {
+    transform: scale(0.98) rotate(0deg);
+}
+
+.hero-right {
+    flex: 0.9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-image {
+    max-width: 100%;
+    height: auto;
+    max-height: 65vh;
+    object-fit: contain;
+}
+
+
+@media (max-width: 1024px) {
+    .hero-heading {
+        font-size: 38px;
+    }
+    
+    .hero-description {
+        font-size: 16px;
+    }
+    
+    .logo {
+        font-size: 28px;
+    }
+}
+
+
+@media (max-width: 768px) {
+    /* Hide the standard top navigation list links */
+    .nav-links {
+        display: none;
+    }
+
+    /* Unhide the structural Hamburger button icon lines */
+    .menu-trigger-btn {
+        display: flex;
+    }
+
+    /* Absolute Drawer Panel Architecture Layout positions right edge */
+    .mobile-drawer {
+        display: none;
+        position: fixed;
+        top: 90px;
+        right: 0;
+        width: 260px;
+        height: calc(100vh - 90px);
+        background-color: #ffffff;
+        box-shadow: -10px 15px 30px rgba(0, 0, 0, 0.05);
+        padding: 40px 30px;
+        border-left: 1px solid #f1f5f9;
+    }
+
+    .drawer-links {
+        display: flex;
+        flex-direction: column;
+        list-style: none;
+        gap: 25px;
+    }
+
+    .drawer-links a {
+        text-decoration: none;
+        color: #475569;
+        font-size: 18px;
+        font-weight: 600;
+        transition: color 0.2s ease;
+    }
+
+    .drawer-links a:hover {
+        color: #00a8ff;
+    }
+
+    /* 
+       Pure CSS Interaction Magic: `:focus` tracks click updates cleanly.
+    */
+    .menu-trigger-btn:focus + .mobile-drawer {
+        display: block;
+    }
+
+    /* Morph the interactive hamburger bars cleanly into an 'X' close symbol shape */
+    .menu-trigger-btn:focus .bar:nth-child(1) {
+        transform: translateY(9px) rotate(45deg);
+    }
+    
+    .menu-trigger-btn:focus .bar:nth-child(2) {
+        opacity: 0;
+    }
+    
+    .menu-trigger-btn:focus .bar:nth-child(3) {
+        transform: translateY(-9px) rotate(-45deg);
+    }
+
+    /* Stack grid boxes downward on phone screens */
+    .hero-section {
+        flex-direction: column;
+        text-align: center;
+        padding-top: 50px;
+        padding-bottom: 50px;
+    }
+
+    .hero-left {
+        padding-right: 0;
+        margin-bottom: 50px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .hero-description {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .hero-image {
+        max-height: 45vh;
+    }
+}
