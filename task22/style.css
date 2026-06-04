@@ -1,0 +1,31 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+.dashboard-box {
+    width: fit-content;
+    margin: auto;
+}
+
+.card1 {
+    top: 30px;
+    left: -60px;
+}
+
+.card2 {
+    top: 80px;
+    right: -60px;
+}
+
+.card3 {
+    bottom: 20px;
+    left: -50px;
+}
+
+ul li a {
+    text-decoration: none;
+}
+
+ul li a:hover {
+    color: orange;
+}

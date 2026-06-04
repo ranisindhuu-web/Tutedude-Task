@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Workspace</title>
+
+    <!-- Tailwind CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="sticky top-0 z-50 bg-white shadow">
+        <div class="max-w-7xl mx-auto flex justify-between items-center p-4">
+
+            <h2 class="text-2xl font-bold">
+                Project
+            </h2>
+
+            <ul class="flex gap-6">
+                <li><a href="#">Product</a></li>
+                <li><a href="#">Solutions</a></li>
+                <li><a href="#">Resources</a></li>
+                <li><a href="#">Pricing</a></li>
+                <li><a href="#">Log In</a></li>
+            </ul>
+
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="bg-gradient-to-b from-orange-100 to-white text-center py-20">
+
+        <div class="max-w-4xl mx-auto px-5">
+
+            <h1 class="text-5xl font-bold mb-4">
+                Write, plan, share.
+            </h1>
+
+            <h2 class="text-4xl font-semibold mb-6">
+                With AI at your side.
+            </h2>
+
+            <p class="text-gray-600 mb-10">
+                Project is a modern workspace where teams can organize tasks,
+                manage projects and work together more easily using AI tools.
+            </p>
+
+            <!-- CTA Buttons -->
+            <div class="relative h-16 flex justify-center items-center">
+
+                <button class="bg-black text-white px-6 py-3 rounded">
+                    Get AI free →
+                </button>
+
+                <button class="absolute left-1/2 ml-28 border px-6 py-3 rounded bg-white">
+                    Request a demo
+                </button>
+
+            </div>
+
+            <!-- Dashboard Section -->
+            <div class="relative mt-20 dashboard-box">
+
+                <img
+                    src="https://via.placeholder.com/700x400"
+                    alt="dashboard"
+                    class="mx-auto rounded-lg shadow-lg"
+                >
+
+                <!-- Tasks Card -->
+                <div class="absolute bg-white shadow p-4 rounded card1">
+                    <p>📋</p>
+                    <p>12 tasks completed today</p>
+                </div>
+
+                <!-- Status Card -->
+                <div class="absolute bg-white shadow p-4 rounded card2">
+                    <p>✓</p>
+                    <p>On Track</p>
+                </div>
+
+                <!-- Team Card -->
+                <div class="absolute bg-white shadow p-4 rounded card3">
+                    <p>👥</p>
+                    <p>+5 online</p>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- Fixed Chat Widget -->
+    <div class="fixed bottom-6 right-6 z-50">
+        <button id="chatBtn" class="bg-purple-500 text-white p-4 rounded-full shadow-lg">
+            💬
+        </button>
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
